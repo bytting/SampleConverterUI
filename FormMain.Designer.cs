@@ -51,20 +51,20 @@
             this.cboxFormat = new System.Windows.Forms.ComboBox();
             this.lbLog = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cbUseScientific = new System.Windows.Forms.CheckBox();
+            this.cbUseLabels = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConvert = new System.Windows.Forms.Button();
             this.folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.fileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.cbUseLabels = new System.Windows.Forms.CheckBox();
-            this.cbUseScientific = new System.Windows.Forms.CheckBox();
             this.menu.SuspendLayout();
             this.tableMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -319,6 +319,40 @@
             this.panel5.Size = new System.Drawing.Size(672, 2);
             this.panel5.TabIndex = 11;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.cbUseScientific);
+            this.panel6.Controls.Add(this.cbUseLabels);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(116, 245);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(574, 24);
+            this.panel6.TabIndex = 12;
+            // 
+            // cbUseScientific
+            // 
+            this.cbUseScientific.AutoSize = true;
+            this.cbUseScientific.Checked = true;
+            this.cbUseScientific.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbUseScientific.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbUseScientific.Location = new System.Drawing.Point(127, 0);
+            this.cbUseScientific.Name = "cbUseScientific";
+            this.cbUseScientific.Size = new System.Drawing.Size(130, 24);
+            this.cbUseScientific.TabIndex = 1;
+            this.cbUseScientific.Text = "Use scientific notation";
+            this.cbUseScientific.UseVisualStyleBackColor = true;
+            // 
+            // cbUseLabels
+            // 
+            this.cbUseLabels.AutoSize = true;
+            this.cbUseLabels.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbUseLabels.Location = new System.Drawing.Point(0, 0);
+            this.cbUseLabels.Name = "cbUseLabels";
+            this.cbUseLabels.Size = new System.Drawing.Size(127, 24);
+            this.cbUseLabels.TabIndex = 0;
+            this.cbUseLabels.Text = "Use placemark labels";
+            this.cbUseLabels.UseVisualStyleBackColor = true;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnConvert);
@@ -345,40 +379,6 @@
             // 
             this.fileDialog.Multiselect = true;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.cbUseScientific);
-            this.panel6.Controls.Add(this.cbUseLabels);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(116, 245);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(574, 24);
-            this.panel6.TabIndex = 12;
-            // 
-            // cbUseLabels
-            // 
-            this.cbUseLabels.AutoSize = true;
-            this.cbUseLabels.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbUseLabels.Location = new System.Drawing.Point(0, 0);
-            this.cbUseLabels.Name = "cbUseLabels";
-            this.cbUseLabels.Size = new System.Drawing.Size(127, 24);
-            this.cbUseLabels.TabIndex = 0;
-            this.cbUseLabels.Text = "Use placemark labels";
-            this.cbUseLabels.UseVisualStyleBackColor = true;
-            // 
-            // cbUseScientific
-            // 
-            this.cbUseScientific.AutoSize = true;
-            this.cbUseScientific.Checked = true;
-            this.cbUseScientific.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbUseScientific.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbUseScientific.Location = new System.Drawing.Point(127, 0);
-            this.cbUseScientific.Name = "cbUseScientific";
-            this.cbUseScientific.Size = new System.Drawing.Size(130, 24);
-            this.cbUseScientific.TabIndex = 1;
-            this.cbUseScientific.Text = "Use scientific notation";
-            this.cbUseScientific.UseVisualStyleBackColor = true;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,9 +404,9 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
