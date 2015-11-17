@@ -239,7 +239,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SampleConverterUI"
         "ProductCode" = "8:{8D9DFB9D-B57C-49C0-89E7-E2A31C05740A}"
-        "PackageCode" = "8:{EDB5BBF2-C24D-466B-B697-9ACAF88C6F9D}"
+        "PackageCode" = "8:{1483A2AF-9666-4FAB-8D04-9C3FBA4D3B04}"
         "UpgradeCode" = "8:{653D71C8-1403-4617-B0AB-0F1A2CCCF2F0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -361,7 +361,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_97172C192FF64FC38B4D06A741A8DE31"
             {
-            "Name" = "8:Shortcut to Primary output from SampleConverterUI (Active)"
+            "Name" = "8:Sample Converter"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -370,7 +370,7 @@
             "Target" = "8:_F72FBEFA2813478CB414AC02C65D2FA8"
             "Folder" = "8:_07F8B8F8025A4E2982DE3054A8234383"
             "WorkingFolder" = "8:_1DD42492387347AAA69724D5056F5EA9"
-            "Icon" = "8:"
+            "Icon" = "8:_7E2557AF1019445EBC93984399620A5F"
             "Feature" = "8:"
             }
         }

@@ -22,7 +22,7 @@ namespace SampleConverterUI
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            // Load            
+            // Load             
         }
 
         private void FormMain_Paint(object sender, PaintEventArgs e)
@@ -45,7 +45,10 @@ namespace SampleConverterUI
 
                 lblPluginFolder.Text = PluginDirectory;
                 cboxPlugins.Items.Clear();
-                cboxPlugins.Items.AddRange(GetPluginList());                
+                cboxPlugins.Items.AddRange(GetPluginList());
+
+                cboxFormat.Items.Clear();
+                cboxFormat.Items.AddRange(GetFormatList());
             }
         }
 
@@ -164,6 +167,33 @@ namespace SampleConverterUI
 
             Process p = NewProcess();            
             p.StartInfo.Arguments = "-list-plugins";                        
+            p.Start();
+
+            string s;
+            while ((s = p.StandardOutput.ReadLine()) != null)
+                list.Add(s);
+
+            while ((s = p.StandardError.ReadLine()) != null)
+                lbLog.Items.Add(s);
+
+            p.WaitForExit();
+
+            /*if (p.ExitCode != 0)
+            {
+                statusLabel.Text = specsoft + " failed while running script";
+                return;
+            }
+            else statusLabel.Text = specsoft + " finished successfully";*/
+
+            return list.ToArray();
+        }
+
+        private string[] GetFormatList()
+        {
+            List<string> list = new List<string>();
+
+            Process p = NewProcess();
+            p.StartInfo.Arguments = "-list-formats";
             p.Start();
 
             string s;

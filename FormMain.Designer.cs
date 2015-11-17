@@ -285,11 +285,6 @@
             this.cboxFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxFormat.FormattingEnabled = true;
-            this.cboxFormat.Items.AddRange(new object[] {
-            "csv",
-            "xml",
-            "json",
-            "kmz"});
             this.cboxFormat.Location = new System.Drawing.Point(116, 215);
             this.cboxFormat.Name = "cboxFormat";
             this.cboxFormat.Size = new System.Drawing.Size(574, 23);
