@@ -30,25 +30,55 @@ namespace SampleConverterUI
             // Paint
             if(!Initalized)
             {
-                Initalized = true;
-                InstallDir = (new FileInfo(System.Reflection.Assembly.GetEntryAssembly().Location)).Directory + "\\";
-                SampleConverter = InstallDir + "SampleConverter.exe";
-                if (!File.Exists(SampleConverter))
+                try
                 {
-                    MessageBox.Show("Unable to find SampleConverter.exe in " + InstallDir);
-                    Close();
+                    Initalized = true;
+                    InstallDir = (new FileInfo(System.Reflection.Assembly.GetEntryAssembly().Location)).Directory + "\\";
+                    SampleConverter = InstallDir + "SampleConverter.exe";
+                    if (!File.Exists(SampleConverter))
+                    {
+                        MessageBox.Show("Unable to find SampleConverter.exe in " + InstallDir);
+                        Close();
+                    }
+
+                    PluginDirectory = GetPluginDirectory();
+                    if (!Directory.Exists(PluginDirectory))
+                        Directory.CreateDirectory(PluginDirectory);
+
+                    CopyPlugin("colibri.js");
+                    CopyPlugin("colibri-internal.js");
+                    CopyPlugin("sam940.js");
+                    CopyPlugin("colibri-internal.js");
+                    CopyPlugin("sampleregistration.js");
+                    CopyPlugin("sampleregistration-activity.js");
+
+                    lblPluginFolder.Text = PluginDirectory;
+                    cboxPlugins.Items.Clear();
+                    cboxPlugins.Items.AddRange(GetPluginList());
+
+                    cboxFormat.Items.Clear();
+                    cboxFormat.Items.AddRange(GetFormatList());
                 }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 
-                PluginDirectory = GetPluginDirectory();                
-                if(!Directory.Exists(PluginDirectory))
-                    Directory.CreateDirectory(PluginDirectory);                
+        private void CopyPlugin(string pluginName)
+        {
+            try
+            {
+                string src = InstallDir + Path.DirectorySeparatorChar + "plugins" + Path.DirectorySeparatorChar + pluginName;
+                string dest = PluginDirectory + Path.DirectorySeparatorChar + pluginName;
 
-                lblPluginFolder.Text = PluginDirectory;
-                cboxPlugins.Items.Clear();
-                cboxPlugins.Items.AddRange(GetPluginList());
-
-                cboxFormat.Items.Clear();
-                cboxFormat.Items.AddRange(GetFormatList());
+                if (!File.Exists(dest))
+                    File.Copy(src, dest, false);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
